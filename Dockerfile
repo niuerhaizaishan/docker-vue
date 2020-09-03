@@ -1,5 +1,6 @@
 FROM nginx:latest
 #把当前打包工程的html复制到虚拟地址
+RUN cd /usr/share/nginx/html && rm -rf *
 COPY dist/ /usr/share/nginx/html/
 #使用自定义nginx.conf配置端口和监听
 RUN rm /etc/nginx/conf.d/default.conf
